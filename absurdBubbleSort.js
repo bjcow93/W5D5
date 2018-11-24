@@ -20,26 +20,27 @@ function askIfGreaterThan(el1, el2, callback) {
 }
 
 function innerBubbleSortLoop(arr, i = 0, madeAnySwaps = false) {
-  if (i === arr.length - 1) {
+  if (i == arr.length - 1) {
     // outerBubbleSortLoop(madeAnySwaps);
     return arr;
   }
 //
   askIfGreaterThan(arr[i], arr[i+1], function (isGreaterThan) {
-      reader.close();
+      // reader.close();
       let num1 = arr[i];
       let num2 = arr[i+1];
-      if (isGreaterThan === true) {
+      if (isGreaterThan == true) {
         arr[i] = num2;
         arr[i+1] = num1;
         madeAnySwaps = true;
         console.log(arr);
       }
 
-      innerBubbleSortLoop(arr, i+1, madeAnySwaps);
 
     }
+
   );
+  innerBubbleSortLoop(arr, i+1, madeAnySwaps);
 
 
 }
